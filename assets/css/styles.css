@@ -1,0 +1,951 @@
+:root
+{
+    --bg-main: #FCF4EB;
+    --bg-orange: #F96243;
+    --full-size: 1440px;
+    --odna-chetvert: calc(var(--full-size) / 4);
+}
+@font-face {
+  font-family: 'Season Sans TRIAL';
+  src: url('../fonts/season-font-family/SeasonSans-TRIAL-Regular.ttf') format('truetype-variations');
+}
+@font-face {
+  font-family: 'Season Mix TRIAL';
+  src: url('../fonts/season-font-family/SeasonMix-TRIAL-Regular.ttf') format('truetype-variations');
+}
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    background: var(--bg-main);
+}
+li{list-style: none;}
+.lines .vertical-line
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 1px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.lines .vertical-line:nth-child(1)
+{
+    left: calc(50% - var(--odna-chetvert));
+}
+.lines .vertical-line:nth-child(2)
+{
+    left: 50%;
+}
+.lines .vertical-line:nth-child(3)
+{
+    left: calc(50% + var(--odna-chetvert));
+}
+header
+{
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 9999;
+    background: rgba(252, 244, 235, 0.55);
+    backdrop-filter: blur(12px);
+}
+header .top-banner
+{
+    max-width: 1440px;
+    height: 40px;
+    margin: auto;
+    background: var(--bg-orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;
+}
+
+header .top-banner p
+{
+    width: 499px;
+    height: 41px;
+    color: #000;
+    font-family: "Season Sans TRIAL";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+header .top-banner .lang-select
+{
+    display: flex;
+    width: 374px;
+    height: 40px;
+    padding: 0 31px;
+    align-items: center;
+    gap: 34px;
+    background-color: var(--bg-main);
+}
+header .top-banner .lang-select li
+{
+    color: #000;
+    font-family: "Season Sans TRIAL";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    user-select: none;
+}
+header .top-banner .lang-select .selected
+{
+    display: flex;
+    width: 43px;
+    height: 20px;
+    padding: 0 6px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: #F96243;
+}
+
+
+header nav
+{
+    position: relative;
+    max-width: 1440px;
+    min-height: 108px;
+    /* background: rgba(252, 244, 235, 0.55);
+    backdrop-filter: blur(12px); */
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    z-index: 4;
+}
+header nav .square
+{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 21px;
+    height: 21px;
+    background: #000;
+}
+.mobile-menu-btn
+{
+    display: none;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.mobile-menu-btn .active
+{
+    display: none;
+}
+.mobile-menu-btn.active .active
+{
+    display: block;
+}
+.mobile-menu-btn.active .deactive
+{
+    display: none;
+}
+header .mobile-nav
+{
+    width: 100%;
+    height: 787px;
+    position: absolute;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(252, 244, 235, 0.55);
+    backdrop-filter: blur(12px);
+    /* opacity: 0;
+    visibility: hidden; */
+    transition: .3s;
+}
+header.active .mobile-nav
+{
+    left: 0;
+}
+header .mobile-nav .menu
+{
+    display: flex;
+    max-width: 335px;
+    height: 537px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    margin: 38px auto;
+}
+header .mobile-nav .menu li
+{
+    color: #000;
+    font-family: "Season Sans TRIAL";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+header nav .logo-mobile
+{
+    display: none;
+}
+header nav .logo-desktop
+{
+    display: block;
+}
+header nav ul.desktop-menu
+{
+    display: flex;
+    width: 880px;
+    height: 24px;
+    margin: 0 38px 0 84px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+header nav ul.desktop-menu li
+{
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Sans TRIAL';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+.container
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+
+.container section
+{
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+}
+.hero
+{
+    position: relative;
+    display: flex;
+    padding: 204px 0 48px 20px;
+    gap: 17px;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -200%;
+    width: 500%;
+    height: 1px;
+    background-color: #000;
+}
+.hero .img-cont
+{
+    width: 686px;
+    height: 664px;
+    background: url('../img/hero-bg.png') lightgray 50% / cover no-repeat;
+    background-position: center;
+}
+.hero .text-box
+{
+    position: relative;
+    width: 717px;
+    height: 507px;
+    background: #FCF4EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 47px;
+    z-index: 2;
+}
+.hero .text-box::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 1px;
+    background-color: #000;
+}
+.hero .text-box::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 1px;
+    background-color: #000;
+}
+.hero .text-box h1
+{
+    max-width: 598px;
+    color: #000;
+    font-family: "Season Mix TRIAL";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 420;
+    line-height: normal;
+}
+.hero .text-box h1 .bold
+{
+    font-weight: 600;
+}
+
+
+
+
+
+.intro
+{
+    width: 100%;
+    max-width: 100vw !important;
+    padding-bottom: 120px;
+    border-bottom: 1px solid #000;
+}
+.intro .intro-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.intro .intro-header .text-box
+{
+    background: rgba(252, 244, 235, 1);
+    max-width: 665px;
+    min-height: 503px;
+    padding: 123px 29px 0 18px;
+}
+.intro .intro-header .text-box h2
+{
+    font-family: 'Season Sans TRIAL';
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 500;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.intro .intro-header .text-box h2 .bold
+{
+    display: block;
+    font-weight: 600;
+}
+
+.intro .intro-header .left-side,
+.intro .intro-header .right-side
+{
+    position: absolute;
+}
+
+.intro .intro-header .left-side
+{
+    bottom: 0;
+    width: 380px;
+    height: 380px;
+    left: calc(50% - var(--odna-chetvert) - 380px + 10px);
+    display: flex;
+    justify-content: flex-end;
+}
+.intro .intro-header .right-side
+{
+    top: 0;
+    width: 256px;
+    height: 256px;
+    right: calc(50% - var(--odna-chetvert) - 256px);
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+.intro .intro-header .left-side .square,
+.intro .intro-header .right-side .square
+{
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+.intro .intro-header .left-side .square
+{
+    background-color: #000;
+}
+.intro .intro-header .left-side .square::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 1px;
+    width: 535.99px;
+    height: 1px;
+    transform: rotate(-45deg);
+    background: #000;
+    /* border: 1px solid rgba(0, 0, 0, 1); */
+    transform-origin: top right;
+}
+.intro .intro-header .right-side .square
+{
+    background-color: rgba(249, 98, 67, 1);
+}
+.intro .intro-header .right-side .square::before
+{
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 359px;
+    height: 1px;
+    transform: rotate(45deg);
+    background: #000;
+    /* border: 1px solid rgba(0, 0, 0, 1); */
+    transform-origin: bottom right;
+    z-index: -1;
+}
+.intro .intro-body
+{
+    width: 100%;
+    background-color: #000;
+    display: flex;
+}
+.intro .intro-body .img-cont
+{
+    background: url(../img/aral_amo.png) lightgray 50% / cover no-repeat;
+    background-position: center;
+    display: block;
+    width: 50%;
+    min-height: 758px;
+}
+.intro .intro-body .text-box
+{
+    position: relative;
+    width: 50%;
+}
+.intro .intro-body .deadline
+{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 87px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 31px 0px 31px;
+    background: rgba(249, 98, 67, 1);
+}
+.intro .intro-body .deadline div
+{
+    max-width: 720px;
+}
+.intro .intro-body .deadline div p
+{
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Sans TRIAL';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.intro .intro-body .deadline div p.bold
+{
+    font-weight: 600;
+}
+.intro .intro-body .deadline .deadline-art
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 180px;
+}
+.intro .intro-body .deadline .line
+{
+    width: 72px;
+    height: 1px;
+    background: #000;
+}
+.intro .intro-body .deadline .square
+{
+    width: 21px;
+    height: 21px;
+    background-color: #000;
+}
+.intro .intro-body .text-box .full-desc
+{
+    padding: 56px 0 0 134px;
+}
+.intro .intro-body .text-box .full-desc p
+{
+    max-width: 458px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Season Sans TRIAL';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+
+
+.programme
+{
+    position: relative;
+    padding: 0 0 100px 0;
+}
+.programme::before
+{
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    left: -100%;
+    width: 300%;
+    height: 1px;
+    background-color: #000;
+    z-index: 1;
+}
+.programme h2
+{
+    max-width: 718px;
+    /* min-height: 218px; */
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Mix TRIAL';
+    font-size: 72px;
+    position: relative;
+    left: calc(50% + 2px);
+    top: 0;
+    padding: 25px 0 0 51px;
+    font-weight: 400;
+    line-height: 86px;
+    letter-spacing: 0%;
+    text-align: left;
+    background: rgba(252, 244, 235, 1);
+}
+.programme h2::before
+{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    left: 0;
+    top: 100%;
+    background: #000;   
+}
+.programme .programme-grid
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 20px;
+}
+.programme .programme-grid article
+{
+    position: relative;
+    max-width: 519px;
+    width: 100%;
+    max-height: 349px;
+    overflow: hidden;
+    transition: .3s;
+}
+.programme .programme-grid .spacebar
+{
+    width: 100%;
+    height: 336px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.programme .programme-grid article:nth-child(3n+1)
+{
+    top: -100px;
+    /* transform: translateY(-25%); */
+}
+.programme .programme-grid article:nth-child(3n)
+{
+    top: 100px;
+    /* transform: translateY(25%); */
+}
+.programme .programme-grid article .img-cont
+{
+    position: relative;
+    height: 349px;
+    width: 100%;
+    background-size: cover;
+    /* overflow: hidden; */
+}
+.programme .programme-grid article .img-cont img
+{
+    height: 100%;
+}
+
+.programme .programme-grid article .title
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 298px;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 31px 0px 31px;
+    background: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    transition: .3s;
+}
+.programme .programme-grid article.active .title
+{
+    background: var(--bg-orange);
+    bottom: -90px;
+}
+.programme .programme-grid article .title h3
+{
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Season Sans TRIAL';
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0%;
+    text-align: left;
+    transition: .3s;
+}
+.programme .programme-grid article.active .title h3
+{
+    color: #000;
+}
+.programme .programme-grid article .title .square
+{
+    width: 21px;
+    height: 21px;
+    background: rgba(249, 98, 67, 1);
+    transition: .3s;
+    position: relative;
+}
+.programme .programme-grid article .title .square::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(249, 98, 67, 1);
+    animation: clickIt 2s infinite linear;
+}
+.programme .programme-grid article.active .title .square
+{
+    background: #000;
+}
+.programme .programme-grid article .description
+{
+    width: 100%;
+    height: max-content;
+    background: #000;
+    padding: 120px 55px 25px 50px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Season Sans TRIAL';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.programme .programme-grid article.active
+{
+    max-height: 1000px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes clickIt {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(2);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+        
+    header nav ul.desktop-menu
+    {
+        gap: 15px;
+        margin: 0 15px
+    }
+    .intro .intro-body .text-box .full-desc
+    {
+        padding: 56px 20px 0 67px;
+    }
+    .intro .intro-body .deadline .deadline-art
+    {
+        gap: 90px;
+    }
+    
+}
+
+
+@media screen and (max-width: 992px) {
+    header nav .square
+    {
+        left: 201px;
+        top: 50%;
+        transform: translateY(-100%);
+
+    }
+    header nav .mobile-menu-btn
+    {
+        display: block;
+    }
+    header nav ul.desktop-menu
+    {
+        display: none;
+    }
+    header nav
+    {
+        flex-direction: column;
+        align-items: baseline;
+        padding: 22px 21px;
+    }
+    header nav .logo-school
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .hero
+    {
+        padding: 240px 0 0 20px;
+    }
+    .hero .text-box h1
+    {
+        font-size: 29px;
+    }
+        
+    .intro .intro-body .text-box .full-desc
+    {
+        padding: 28px 10px 0 33.5px;
+    }
+
+    .programme h2
+    {
+        padding: 15px 0 0 25px;
+    }
+    
+    .programme .programme-grid
+    {
+        padding-top: 50px;
+    }
+
+    .programme .programme-grid article
+    {
+        top: 0 !important;
+    }
+    .programme .programme-grid .spacebar
+    {
+        margin-bottom: 0
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .lines .vertical-line:nth-child(1),
+    .lines .vertical-line:nth-child(3)
+    {
+        display: none;
+    }
+    header .top-banner .lang-select
+    {
+        position: absolute;
+        top: 80vh;
+        right: 0;
+        z-index: 3;
+        background-color: transparent;
+        display: flex;
+        max-width: 430px;
+        height: 61px;
+        padding: 0 31px;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 34px;
+        transition: .3s;
+        opacity: 0;
+    }
+    
+    header.active .top-banner .lang-select
+    {
+        opacity: 1;
+        transition-delay: .3s;
+    }
+
+    .hero
+    {
+        flex-direction: column;
+        gap: 0;
+    }
+    .hero::after
+    {
+        display: none;
+    }
+    .hero .img-cont
+    {
+        width: 100%;
+        max-width: 389px;
+        height: 309px;
+    }
+    .hero .text-box
+    {
+        max-width: 390px;
+        width: 100%;
+        height: max-content;
+        padding: 56px 28px 56px 39px;
+        display: inline-block;
+    }
+    .hero .text-box::before,
+    .hero .text-box::after
+    {
+        width: 500%;
+        left: -200%;
+    }
+    .hero .text-box h1
+    {
+        font-size: 22px;
+    }
+    .intro
+    {
+        padding-bottom: 60px;
+    }
+    .intro .intro-body
+    {
+        flex-direction: column;
+    }
+    .intro .intro-body .img-cont
+    {
+        width: 100%;
+        min-height: 50vh;
+    }
+    .intro .intro-body .text-box
+    {
+        width: 100%;
+    }
+    .intro .intro-body .text-box .full-desc
+    {
+        padding: 25px 10px 25px 33.5px;
+    }
+    .intro .intro-body .text-box .full-desc p
+    {
+        max-width: max-content;
+    }
+    .programme h2
+    {
+        font-size: 40px;
+        line-height: 48px;
+        text-align: left;
+        left: 0;
+    }
+    .programme h2::before
+    {
+        width: 300%;
+        left: -100%;
+    }
+    .programme .programme-grid
+    {
+        flex-direction: column;
+    }
+
+    
+}
+
+@media screen and (max-width: 576px) {
+    header .top-banner p
+    {
+        display: flex;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header nav .square
+    {
+        width: 13px;
+        height: 13px;
+        left: 127px;
+    }
+    header nav .logo-mobile
+    {
+        display: block;
+    }
+    header nav .logo-desktop
+    {
+        display: none;
+    }
+    
+    .hero
+    {
+        padding: 204px 20px 48px;
+    }
+    .intro
+    {
+        padding-bottom: 30px;
+    }
+    .programme .programme-grid article .title
+    {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
