@@ -1,8 +1,16 @@
-const burgerMenu = document.getElementById('mobile-menu-btn')
-burgerMenu.addEventListener('click', function(){
+const burgerMenu = document.getElementById('mobile-menu-btn');
+const mobileNav = document.querySelector('.mobile-nav');
+burgerMenu.addEventListener('click', toggleMenu)
+
+function toggleMenu(){
     document.querySelector('header').classList.toggle('active')
-    document.querySelector('.mobile-nav').classList.toggle('active')
+    mobileNav.classList.toggle('active')
     burgerMenu.classList.toggle('active')
+}
+mobileNav.querySelectorAll("ul li").forEach(e => {
+    e.addEventListener('click', function(){
+        toggleMenu();
+    })
 })
 
 const programmeCards = document.querySelectorAll('.programme-grid article')
