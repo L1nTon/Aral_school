@@ -1714,12 +1714,12 @@ details[open] summary::after {
 
 
 
-.about 
+.about#about
 {
     padding: 147px 0 99px;
     position: relative;
 }
-.about .img-wraper
+.about#about .img-wraper
 {
     position: absolute;
     top: 147px;
@@ -1732,7 +1732,7 @@ details[open] summary::after {
     background-size: cover;
     z-index: -1;
 }
-.about::before
+.about#about::before
 {
     content: '';
     position: absolute;
@@ -1744,7 +1744,7 @@ details[open] summary::after {
     transform: translate(-50%, -50%);
     z-index: 99;
 }
-.about .head
+.about#about .head
 {
     position: relative;
     height: 218px;
@@ -1755,7 +1755,7 @@ details[open] summary::after {
     margin-bottom: 68px;
 }
 
-.about .head h2
+.about#about .head h2
 {
     width: 586px;
     color: rgba(0, 0, 0, 1);
@@ -1769,23 +1769,23 @@ details[open] summary::after {
     text-align: left;
 }
 
-.about .text-content
+.about#about .text-content
 {
     display: flex;
     gap: calc(57px * 2);
     justify-content: center;
 }
-.about .text-content .bg-wraper
+.about#about .text-content .bg-wraper
 {
     width: 50%;
 }
-.about .text-content .bg-wraper:nth-child(1)
+.about#about .text-content .bg-wraper:nth-child(1)
 {
     display: flex;
     justify-content: flex-end;
     padding-right: 50px;
 }
-.about .text-content .title
+.about#about .text-content .title
 {
     max-width: 357px;
     min-height: 357px;
@@ -1793,7 +1793,7 @@ details[open] summary::after {
     background-color: #fff;
     padding: 42px 18px 104px 35px;
 }
-.about .text-content .title h3
+.about#about .text-content .title h3
 {
     font-family: 'Season Mix TRIAL';
     font-size: 30px;
@@ -1802,14 +1802,14 @@ details[open] summary::after {
     letter-spacing: 0%;
     text-align: left;
 }
-.about .text-content .info
+.about#about .text-content .info
 {
     max-width: 521px;
     min-height: 1122px;
     background-color: #fff;
     padding: 43px 45px 56px 71px;
 }
-.about .text-content .info p
+.about#about .text-content .info p
 {
     font-family: 'Season Sans TRIAL';
     font-size: 16px;
@@ -2198,7 +2198,7 @@ footer .organizer .text-box div.bot-cont
         z-index: 1 !important;
     }
     
-    .about .text-content
+    .about#about .text-content
     {
         gap: 0;
     }
@@ -2276,7 +2276,7 @@ footer .organizer .text-box div.bot-cont
         width: 100%;
     }
 
-    .about .head
+    .about#about .head
     {
         width: 100%;
         left: 0;
@@ -2547,29 +2547,29 @@ footer .organizer .text-box div.bot-cont
     }
 
     
-    .about .head h2
+    .about#about .head h2
     {
         font-size: 40px;
         line-height: 48px;
     }
 
-    .about .text-content
+    .about#about .text-content
     {
         flex-direction: column;
         gap: 20px;
         align-items: center;
     }
-    .about .text-content .bg-wraper
+    .about#about .text-content .bg-wraper
     {
         width: 100%;
     }
-    .about .text-content .bg-wraper
+    .about#about .text-content .bg-wraper
     {
         padding: 0 !important;
         display: flex !important;
         justify-content: center !important;
     }
-    .about .text-content .info
+    .about#about .text-content .info
     {
         padding: 43px 22.5px 56px 30px;
     }
