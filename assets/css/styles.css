@@ -1475,7 +1475,7 @@ header nav ul.desktop-menu li
     height: 1px;
     width: 300%;
     background-color: #000;
-    z-index: -1;
+    z-index: 1;
 
 }
 .team .team-member .member-visual .photo-wrapper img
@@ -1483,6 +1483,7 @@ header nav ul.desktop-menu li
     max-width: 292px;
     width: 100%;
     max-height: 292px;
+    z-index: 2
 }
 .team .team-member .member-visual .name-box p
 {
